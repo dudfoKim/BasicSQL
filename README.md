@@ -48,6 +48,7 @@
 
   * Polymorphism : 조상클래스 타입의 참조변수로 자손클래스의 인스턴스를 참조할 수 있다. (상위 클래스변수는 하위 객체로 생성이 가능하다. ex: parent p = new child());
   
+----
  
 4. 예외처리(Exception handling)
 
