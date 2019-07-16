@@ -26,6 +26,8 @@
  
   * Naming : 클래스 이름의 첫 글자는 항상 대문자로 하며, 변수와 메소드는 소문자로 한다. 여러 단어로 이루어진 이름은 카멜 표기법을 따른다.
   
-  * Primitive type : 실제 값을 저장한다. (boolean, char, byte, short, int, long, float, double)
+  * Primitive type : 실제 값을 저장한다. (boolean, char, byte, short, int, long, float, double - 총 8개)
   
-  * Reference type : 
+  * Reference type : 어떤 값이 저장되어 있는 주소를 값으로 가진다. (새로운 클래스를 작성하여 새로운 참조형변수를 만들어 낼 수 있다.)
+  
+  * Casting : 다른 타입으로의 변수로 변환한다. (연산은 기본적으로 같은 타입의 변수 간 동작한다.)
