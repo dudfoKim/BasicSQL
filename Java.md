@@ -52,11 +52,35 @@
   
   ---
 
-# 5. Java Virtual Machine
+# 5. 메모리
   
   * 특징 : 자바 응용프로그램은 운영체제나 하드웨어가 아닌 JVM하고만 통신하고, JVM이 자바 응용프로그램으로 전달받은 명령을 해당 운영체제가 이해할 수 있도록 변환하여 전달한다. 즉, 자바로 작성된 프로그램은 운영체제나 하드웨어와 관계없이 실행 가능하다.
   
-  * 자바프로그램 실행과정 : 소스코드(.java) => 컴파일러 실행(javac) => 자바 바이트 코드 생성(.class)
+  * 자바프로그램 실행과정 : 소스코드(.java) => 컴파일러 실행(javac) => 자바 바이트 코드 생성(.class) => OS별 JVM에서 실행
   
+  * Static area : 메소드 내에서 정의하는 지역변수 및 데이터 값이 저장되는 영역
   
+        public class StackAreaEx 
+        {
+	         public static void main(String[] args) 
+          {
+		          int a = 5;	a = 4;	a = 3;	a = 2;
+		          System.out.println(a);
+
+        //		System.out.println(i); 컴파일 에러
+	       }
+
+  * Heap area : 객체, 배열 등 참조형 데이터 타입을 저장하는 영역(new 연산자로 생성된 인스턴스 영역의 참조값을 )
   
+           public class HeapAreaEx01
+           {
+	           public static void main(String[] args)
+            {
+		            int[] a = null; // int형 배열 선언 및 Stack 영역 공간 할당
+		            System.out.println(a); // 결과 : null
+		            a = new int[5]; // Heap 영역에 5개의 연속된 공간 할당 및 변수 a에 참조값 할당
+		            System.out.println(a); // 결과 : @15db9742 (참조값)
+	           }
+           }
+           
+  * Static(Method, Class) area : 클래스가 로딩될때 선언된 자원들은 JVM에서 메모리에 딱 한 번만 올라가
