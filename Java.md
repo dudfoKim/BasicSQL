@@ -83,4 +83,23 @@
 	           }
            }
            
-  * Static(Method, Class) area : 모든 객체가 다같이 공유하고 완벽하게 똑같이 공유하는 변수와 메소드에 활용되며, 코드가 JVM 메모리 상에 로딩될 때 딱 한 번만 올라간다.
+  * Static(Method, Class) area : 모든 객체가 다같이 공유하고 완벽하게 똑같이 공유하는 변수와 메소드에 활용되며, 코드가 JVM 메모리 상에 로딩될 때 딱 한 번만 올라간다. (인스턴스화를 하지 않고 사용가능하다.)
+  
+  	  public class E
+  	  {
+	    int e = 3;
+	    static int r = 4;
+	    
+	    public static void e()
+	    {
+	    	System.out.println("Hello Worldl!");
+		new E().e = 4; // e = 4;
+	   	r = 5; // static 변수이므로 사용가능
+	    }
+	    
+	    public static void main(String[] args)
+	    {
+	    	E.e();
+	    }
+	   }
+}
