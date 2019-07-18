@@ -12,34 +12,63 @@
   
   * Ajax(Asynchronous JavaScript and XML) : HTML페이지 전체가 아니라 필요한 부분만을 갱신할 수 있도록 XMLHttpRequest 객체를 통해 요청한다. JSON이나 XML 형태로 최소한의 필요 데이터만 받아서 갱신하게 된다.
   
-  ------
-  
-# 2. 변수(Variable)
- 
-  * Naming : 클래스 이름의 첫 글자는 항상 대문자로 하며, 변수와 메소드는 소문자로 한다. 여러 단어로 이루어진 이름은 카멜 표기법을 따른다.
-  
-  * Primitive type : 실제 값을 저장한다. (boolean, char, byte, short, int, long, float, double - 총 8개)
-  
-  * Reference type : 어떤 값이 저장되어 있는 주소를 값으로 가진다. (새로운 클래스를 작성하여 새로운 참조형변수를 만들어 낼 수 있다.)
-  
-  * Casting : 다른 타입으로의 변수로 변환한다. (연산은 기본적으로 같은 타입의 변수 간 동작한다.)
-
 ------
 
-# 3. 객체지향(Object-Oriented)
+# 3. 콜백함수
 
-  * Class/Object : 클래스에 정의된 대로 객체가 생성되며, 만들어진 객체는 그 클래스의 인스턴스라고 한다. (그리고 인스턴스는 참조변수를 통해서만 다룰 수 있다.)
+  * 정의 : 특정 함수가 실행을 마친 후에 실행되는 함수로, 자바스크립트에서는 함수도 객체이기 때문에 인자로 전달된 함수를 콜백함수라고 한다.
   
-  * Instance : 인스턴스 변수와 메소드는 인스턴스를 생성한 후 사용가능하며 인스턴스마다 서로 다른 값을 가질 수 있다. 클래스 변수와 메소드는 static 키워드를 활용해 사용할 수 있고, 모든 인스턴스들이 공통적인 값을 유지할 때 사용한다. (모든 인스턴스가 하나의 저장공간을 공유)
+  * 특징 : 비동기 데이터를 처리하기 위해 함수의 인자로 콜백함수를 넣고, 비동기처리가 끝나는 시점에 콜백함수를 실행시킨다. 비동기프로그래밍을 위해 비동기적으로 콜백함수를 호출하는 함수(setTimeout 등)와 비동기적으로 호출될 수 있는 콜백함수가 필요하다.
   
-  * JVM 메모리구조 : Method area, Call Stack, Heap
+  * ex1) setTimeout 이용
   
-  * Overloading : 메소드의 이름이 같고 파라미터 갯수나 리턴 값 타입이 달라야한다. (ex : println함수)
+        console.log('Hi');
+ 
+        setTimeout(function ()
+        {
+         console.log('Hi2');
+        },3000);
+ 
+        console.log('Hi3');
+ 
+        /*
+        결과
+        Hi
+        Hi3
+        Hi2
+        */
   
-  * Inheritance : 클래스 간의 관계는 포함(has-a)와 상속(is-a)로 구분할 수 있으며, 상황에 따라 클래스 자체가 변수로 쓰일 수도 있다.
   
-  * OVerriding : 조상클래스로부터 상속받은 메소드의 내용을 상황에 맞게 변경할 수도 있다. 단, 선언부(이름, 리턴타입, 매개변수 등)는 같아야 한다.
+  * ex2) 절대 호출될 수 없는 "호출 이후"
+  
+        function fn_newCallBack()
+        {
+         console.log("비동기 호출");
+        }
+        setTimeout(fn_newCallBack, 0); // 콜백이 언제 동작할지 예측해보자.
 
-  * Polymorphism : 조상클래스 타입의 참조변수로 자손클래스의 인스턴스를 참조할 수 있다. (상위 클래스변수는 하위 객체로 생성이 가능하다. ex: parent p = new child());
+        console.log("-------  호출 이후 -------");
+
+        //무한로프로 콘솔을 찍어낸다.
+        while(true)
+        {
+          console.log("한국 일교차 너무해...");
+        }
+        
+  * Call back hell : 비동기처리 로직을 위해 콜백 함수를 연속해서 사용할 때 발생하는 문제
   
-----
+        $.get('url', function(response)
+        {
+          parseValue(response, function(id) 
+          {
+            auth(id, function(result) 
+            {
+              display(result, function() 
+              {
+                console.log(text);
+               });
+             });
+          });
+         });
+         
+         => Promise나 Async를 사용해서 해결하기!
