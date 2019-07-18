@@ -81,3 +81,28 @@
          => Promise나 Async를 사용해서 해결하기!
          
    * Promise : '언젠가 끝나는 작업'의 결과값을 담는 통
+   
+------
+
+# 4. 자바스크립트에서의 메모리
+
+   * Mark&Sweep : 메모리에 저장된 변수 전체를 표시하고 컨텍스트에 있는 변수가 참조하는 변수의 표시를 지운 후, 표시가 지워지지 않는 변수를 삭제한다.
+   
+   * Reference Counting : 변수 선언 후 값을 참조하면 카운트를 늘려나가며, 만약 값의 참조 카운트가 0일 경우 메모리를 회수해도 안전하다고 판단한다. (순환 참조 문제 발생)
+   
+   cf. 순환 참조 문제
+   
+    function problem()
+    {
+     let objectA = new Object(); // objectA : reference count 1
+     let objectB = new Object(); // objectB : reference count 2
+
+     objectA.someOtherObject = objectB; // objectA : 2
+     objectB.anotherObject = objectA; // objectB : 2
+    }
+
+    /*
+    이 스코프를 벗어나더라도 위의 변수들은 사용되지 않는데 
+    카운트가 0이 아니기 때문에 GC가 컬렉션을 하지 않게 되며,
+    이는 곧 메모리 낭비로 이어진다. 이 때는 강제로 NULL을 할당해야 한다.
+    */
