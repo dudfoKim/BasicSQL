@@ -15,8 +15,6 @@
    
   * 예외처리 발생 예제(ArithmeticException)
   
-
-
           public class ExceptionExist
           {
               public static void main(String[] args) 
@@ -40,6 +38,9 @@
   
   * 모든 예외 관련 클래스는 java.lang.Throwable 클래스의 하위 클래스이다.
 
+  * throw : 발생한 예외를 다른 메소드에 전달하거나 일부로 에러를 발생시킬 수 있다.
+  
+  
 
 ------
 
