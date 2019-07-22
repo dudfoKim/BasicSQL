@@ -64,7 +64,7 @@
 
 * SQL 기초 4
       
-      // 정상 쿼리
+      // 정상 쿼리 (DISTINCT, 해석순서)
       SELECT DISTINCT job, sal+comm as "정렬쓰"
       FROM emp
       ORDER BY "정렬쓰";
