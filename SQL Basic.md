@@ -2,12 +2,30 @@
 
 * DB 및 DBMS 기본내용
 
+      * 쿼리 문법순서
+      SELECT                          - 1
+      FROM                            - 2
+      WHERE                           - 3
+      GROUP BY                        - 4
+      HAVING                          - 5
+      ORDER BY                        - 6
+      
+      * 쿼리 문법순서
+      FROM                            - 1
+      WHERE                           - 2
+      GROUP BY                        - 3
+      HAVING                          - 4
+      SELECT                          - 5
+      ORDER BY                        - 6
+
 * 자주 쓰는 기본쿼리
 
+      // 접속가능한 모든 테이블 목록조회
       SELECT *
-      FROM tab; // 접속가능한 모든 테이블 목록조회
+      FROM tab; 
 
-      DESC dept; // 해당 테이블 구조조회
+      // 해당 테이블 구조조회
+      DESC dept; 
       
 * SQL 기초1
 
