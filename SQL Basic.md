@@ -35,12 +35,20 @@
               FROM emp B
             );
             
-      // = or 형태는 무조건 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)            
-      SELECT empno, ename, job, sal, deptno
-      FROM EMP
-      WHERE sal>=2800 and job in ('manager', 'MANAGER'); // job='manager' or job='MANAGER'
+      /*   
+      1. 기본 연산자 우선순위 : 괄호 > and > or
+      2. or 연산자는 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)
+      3. 밑의 쿼리는 결과가 다르다. 한 번 생각해보기 
+      */
+      SELECT empno, ename, job, sal
+      FROM emp
+      WHERE sal>1500 and job='PRESIDENT' or job='SALESMAN';
       
-      // 1250 미만, 2500 초과
+      SELECT empno, ename, job, sal
+      FROM emp
+      WHERE sal>1500 and (job='PRESIDENT' or job='SALESMAN');
+      
+      // Condition : 1250 미만, 2500 초과
       SELECT *
       FROM emp
       WHERE sal not between 1250 and 2500;         
