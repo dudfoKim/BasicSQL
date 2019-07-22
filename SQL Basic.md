@@ -64,13 +64,13 @@
 
 * SQL 기초 4
       
-      // 정상 쿼리 1개 + 에러 발생쿼리 1개
-      
+      // 정상 쿼리
       SELECT DISTINCT job, sal+comm
       FROM emp
       ORDER BY 2;
 
-      SELECT DISTINCT job, sal+comm // DISTINCT 키워드를 사용했을 때는 SELECT절에 있는 칼럼으로만 
+      // DISTINCT 키워드를 사용했을 때는 SELECT절에 있는 칼럼으로만
+      SELECT DISTINCT job, sal+comm  
       FROM emp
       ORDER BY sal;
   
