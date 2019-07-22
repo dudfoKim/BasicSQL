@@ -37,6 +37,7 @@
       SELECT empno, ename, job, sal, deptno
       FROM EMP
       WHERE sal>=2800 and job in ('manager', 'MANAGER'); // job='manager' or job='MANAGER'
+      // = or 형태는 무조건 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)
       
       SELECT *
       FROM emp
