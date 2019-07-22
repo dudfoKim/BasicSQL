@@ -18,24 +18,17 @@
 
       SELECT '직업 : ' ||emp.job  || ' / 이름 : ' || emp.ename || ' / 연봉 : ' || emp.sal as "내가 새로 만든거라구~"
       FROM emp;
+      
+      SELECT *
+      FROM EMP;
 
       SELECT distinct count(*)
       FROM emp;
 
       SELECT *
       FROM EMP;
+      where ROWNUM = 2; // 에러
 
-      SELECT *
-      FROM EMP;
-      where ROWNUM LIKE '2'; // 에러
-
-      SELECT ename, sal, deptno
-      FROM emp
-      WHERE deptno <> 30;
-
-      SELECT ename, sal, deptno
-      FROM emp
-      WHERE deptno != 30;
   
 ------
   
