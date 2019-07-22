@@ -36,8 +36,11 @@
             
       SELECT empno, ename, job, sal, deptno
       FROM EMP
-      WHERE sal>=2800 and job in ('manager', 'MANAGER');
-            
+      WHERE sal>=2800 and job in ('manager', 'MANAGER'); // job='manager' or job='MANAGER'
+      
+      SELECT *
+      FROM emp
+      WHERE sal not between 1250 and 2500; // 1250 미만, 2500 초과            
 
   
 ------
