@@ -53,6 +53,14 @@
       FROM emp
       WHERE sal not between 1250 and 2500;         
 
+      // 정상적으로 실행되는 쿼리는 무엇이고, 에러가 발생하는 쿼리일 경우 그 이유는?
+      SELECT DISTINCT job, sal+comm
+      FROM emp
+      ORDER BY 2;
+
+      SELECT DISTINCT job, sal+comm
+      FROM emp
+      ORDER BY sal;
   
 ------
   
