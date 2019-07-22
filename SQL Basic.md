@@ -2,14 +2,14 @@
 
 * DB 및 DBMS 기본내용
 
-* SQL 기초(SELECT, WHERE절)
+* 자주 쓰는 기본쿼리
 
-      // 자주 쓰는 기본쿼리
       SELECT *
       FROM tab; // 접속가능한 모든 테이블 목록조회
 
       DESC dept; // 해당 테이블 구조조회
-      //
+      
+* SQL 기초(SELECT, WHERE절)
 
       @C:\create1.sql
 
