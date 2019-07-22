@@ -22,9 +22,10 @@
       SELECT distinct count(*)
       FROM emp;
       
+      // 에러 발생
       SELECT *
       FROM EMP;
-      where ROWNUM = 2; // 에러
+      where ROWNUM = 2;
       
       SELECT *
       FROM emp A
@@ -34,14 +35,15 @@
               FROM emp B
             );
             
+      // = or 형태는 무조건 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)            
       SELECT empno, ename, job, sal, deptno
       FROM EMP
       WHERE sal>=2800 and job in ('manager', 'MANAGER'); // job='manager' or job='MANAGER'
-      // = or 형태는 무조건 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)
       
+      // 1250 미만, 2500 초과
       SELECT *
       FROM emp
-      WHERE sal not between 1250 and 2500; // 1250 미만, 2500 초과            
+      WHERE sal not between 1250 and 2500;         
 
   
 ------
