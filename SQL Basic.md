@@ -12,22 +12,28 @@
 * SQL 기초(SELECT, WHERE절)
 
       @C:\create1.sql
-
+      
       SELECT 1 AS "1"
       FROM dual;
-
+      
       SELECT '직업 : ' ||emp.job  || ' / 이름 : ' || emp.ename || ' / 연봉 : ' || emp.sal as "내가 새로 만든거라구~"
+      FROM emp;
+      
+      SELECT distinct count(*)
       FROM emp;
       
       SELECT *
       FROM EMP;
-
-      SELECT distinct count(*)
-      FROM emp;
-
-      SELECT *
-      FROM EMP;
       where ROWNUM = 2; // 에러
+      
+      SELECT *
+      FROM emp A
+      WHERE A.sal>=
+            (
+              SELECT AVG(B.SAL)
+              FROM emp B
+            );
+            
 
   
 ------
