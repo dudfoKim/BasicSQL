@@ -4,24 +4,38 @@
 
 * SQL 기초(SELECT, WHERE절)
 
+      // 자주 쓰는 기본쿼리
+      SELECT *
+      FROM tab; // 접속가능한 모든 테이블 목록조회
+
+      DESC dept; // 해당 테이블 구조조회
+      //
+
       @C:\create1.sql
 
-      SELECT ROWNUM, ROWID
-      FROM EMP;
+      SELECT 1 AS "1"
+      FROM dual;
 
       SELECT '직업 : ' ||emp.job  || ' / 이름 : ' || emp.ename || ' / 연봉 : ' || emp.sal as "내가 새로 만든거라구~"
       FROM emp;
-
-      SELECT *
-      FROM dept
-      ORDER BY 1;
 
       SELECT distinct count(*)
       FROM emp;
 
       SELECT *
       FROM EMP;
-      WHERE ROWNUM LIKE '2'; // Error
+
+      SELECT *
+      FROM EMP;
+      where ROWNUM LIKE '2'; // 에러
+
+      SELECT ename, sal, deptno
+      FROM emp
+      WHERE deptno <> 30;
+
+      SELECT ename, sal, deptno
+      FROM emp
+      WHERE deptno != 30;
   
 ------
   
