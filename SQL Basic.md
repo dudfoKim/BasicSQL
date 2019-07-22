@@ -28,7 +28,6 @@
       FROM EMP;
       where ROWNUM = 2;
       
-      // 에러 발생
       SELECT *
       FROM EMP;
       where ROWID = 2;
