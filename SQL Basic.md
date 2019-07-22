@@ -9,7 +9,7 @@
 
       DESC dept; // 해당 테이블 구조조회
       
-* SQL 기초(SELECT, WHERE절)
+* SQL 기초1
 
       @C:\create1.sql
       
@@ -22,10 +22,16 @@
       SELECT distinct count(*)
       FROM emp;
       
-      // 에러 발생
+* SQL 기초2
+
       SELECT *
       FROM EMP;
       where ROWNUM = 2;
+      
+      // 에러 발생
+      SELECT *
+      FROM EMP;
+      where ROWID = 2;
       
       SELECT *
       FROM emp A
@@ -35,11 +41,14 @@
               FROM emp B
             );
             
+* SQL 기초3
+      
       /*   
       1. 기본 연산자 우선순위 : 괄호 > and > or
       2. or 연산자는 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)
       3. 밑의 쿼리는 결과가 다르다. 한 번 생각해보기 
       */
+      
       SELECT empno, ename, job, sal
       FROM emp
       WHERE sal>1500 and job='PRESIDENT' or job='SALESMAN';
@@ -53,12 +62,15 @@
       FROM emp
       WHERE sal not between 1250 and 2500;         
 
-      // 정상적으로 실행되는 쿼리는 무엇이고, 에러가 발생하는 쿼리일 경우 그 이유는?
+* SQL 기초 4
+      
+      // 정상 쿼리 1개 + 에러 발생쿼리 1개
+      
       SELECT DISTINCT job, sal+comm
       FROM emp
       ORDER BY 2;
 
-      SELECT DISTINCT job, sal+comm
+      SELECT DISTINCT job, sal+comm // DISTINCT 키워드를 사용했을 때는 SELECT절에 있는 칼럼으로만 
       FROM emp
       ORDER BY sal;
   
