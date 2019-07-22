@@ -34,6 +34,10 @@
               FROM emp B
             );
             
+      SELECT empno, ename, job, sal, deptno
+      FROM EMP
+      WHERE sal>=2800 and job in ('manager', 'MANAGER');
+            
 
   
 ------
