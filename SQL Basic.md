@@ -64,12 +64,15 @@
 
 * SQL 기초 4
       
-      // 정상 쿼리 (DISTINCT, 해석순서)
+      /*
+      정상 쿼리 : DISTINCT는 Alias 가능
+      쿼리 순서 : From - Where - Select - Order By
+      */
       SELECT DISTINCT job, sal+comm as "정렬쓰"
       FROM emp
       ORDER BY "정렬쓰";
 
-      // DISTINCT 키워드를 사용했을 때는 SELECT절에 있는 칼럼으로만
+      // 에러발생 : DISTINCT 키워드를 사용했을 때는 SELECT절에 있는 칼럼으로만
       SELECT DISTINCT job, sal+comm  
       FROM emp
       ORDER BY sal;
