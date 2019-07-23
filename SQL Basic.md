@@ -60,7 +60,7 @@
             
 * SQL 기초3
       
-      /*   
+      /* 
       1. 기본 연산자 우선순위 : 괄호 > and > or
       2. or 연산자는 조건의 뒤부터 순차적으로 결과를 판단한다. (F6 활용)
       3. 밑의 쿼리는 결과가 다르다. 한 번 생각해보기 
@@ -118,7 +118,7 @@
       FROM emp
       WHERE deptno = 10;
      
-      /*
+      /* Output 결과
       NAME               LOWER(JOB) UPPER(JOB) INITCAP(JOB) 
       ------------------ ---------- ---------- ------------ 
       CLARK, JOB :       manager    MANAGER    Manager      
@@ -132,7 +132,7 @@
       FROM emp
       WHERE SUBSTR(ename, length(ename)-1, 1) = 'K';
          
-      /*
+      /* Output 결과
       ENAME      JOB       K index                
       ---------- --------- ---------------------- 
       BLAKE      MANAGER   4  
