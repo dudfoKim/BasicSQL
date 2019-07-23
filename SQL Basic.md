@@ -98,6 +98,49 @@
   
 # 2. '19.07.23
 
+* 단일 행 함수
+
+      1. 인자(Parameter)를 받아들여 행 1개를 결과로 반환한다.
+      2. SELECT, WHERE, ORDER BY 절에 사용한다.
+      3. 중첩사용이 가능하고 데이터 타입을 변경할 수 있다.
+          
+      cf. DB Character Set 확인
+          
+      SELECT parameter, value
+      FROM nls_database_parameters
+      WHERE parameter = 'NLS_CHARACTERSET';
+      
+* 단일 행 함수 - 문자함수
+
+      1. LOWER, UPPER, INITCAP, CONCAT
+      
+      SELECT CONCAT(ename, ', JOB : ') as "NAME", LOWER(job), UPPER(job), INITCAP(job)
+      FROM emp
+      WHERE deptno = 10;
+     
+      /*
+      NAME               LOWER(JOB) UPPER(JOB) INITCAP(JOB) 
+      ------------------ ---------- ---------- ------------ 
+      CLARK, JOB :       manager    MANAGER    Manager      
+      KING, JOB :        president  PRESIDENT  President    
+      MILLER, JOB :      clerk      CLERK      Clerk   
+      */
+          
+      2. LENGTH, SUBSTR, INSTR
+
+      SELECT ename, job, INSTR(ename, 'K', length(ename)-1)
+      FROM emp
+      WHERE SUBSTR(ename, length(ename)-1, 1) = 'K';
+         
+      /*
+      ENAME      JOB       K index                
+      ---------- --------- ---------------------- 
+      BLAKE      MANAGER   4  
+      */
+          
+      3. 
+          
+          
 
 ------
 
