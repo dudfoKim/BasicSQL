@@ -37,8 +37,32 @@
       SELECT '직업 : ' ||emp.job  || ' / 이름 : ' || emp.ename || ' / 연봉 : ' || emp.sal as "내가 새로 만든거라구~"
       FROM emp;
       
+      /* Output 결과
+      내가 새로 만든거라구~                                                                     
+      -------------------------------------------------------------------------------- 
+      직업 : CLERK / 이름 : SMITH / 연봉 : 800                                          
+      직업 : SALESMAN / 이름 : ALLEN / 연봉 : 1600                                      
+      직업 : SALESMAN / 이름 : WARD / 연봉 : 1250                                       
+      직업 : MANAGER / 이름 : JONES / 연봉 : 2975                                       
+      직업 : SALESMAN / 이름 : M%%ARTIN / 연봉 : 1250                                   
+      직업 : MANAGER / 이름 : BLAKE / 연봉 : 2850                                       
+      직업 : MANAGER / 이름 : CLARK / 연봉 : 2450                                       
+      직업 : ANALYST / 이름 : SCOTT / 연봉 : 3000                                       
+      직업 : PRESIDENT / 이름 : KING / 연봉 : 5000                                      
+      직업 : SALESMAN / 이름 : TURNER / 연봉 : 1500                                     
+      직업 : CLERK / 이름 : ADAMS / 연봉 : 1100                                         
+      직업 : CLERK / 이름 : JAMES / 연봉 : 950                                          
+      직업 : ANALYST / 이름 : FORD / 연봉 : 3000                                        
+      직업 : CLERK / 이름 : MILLER / 연봉 : 1300
+      */
+      
       SELECT distinct count(*)
       FROM emp;
+      
+      /* Output 결과
+      COUNT(*)               
+      ---------------------- 
+      14
       
 * SQL 기초2
 
